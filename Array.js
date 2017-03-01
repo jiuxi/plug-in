@@ -30,3 +30,15 @@ Array.prototype.rmove = function(val) {
     }
     return this;
 };
+
+//取出两数组相同元素
+function getArr(a, b) {
+	var result = new Array();
+	var c = a.toString();
+	for (var i = 0; i < b.length; i++) {
+		if(c.indexOf(b[i].toString()) != -1){
+			result.push(b[i]);
+		}
+	}
+	return result;
+};
