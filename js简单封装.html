@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">
+    #box {
+        margin: auto;
+    }
+</style>
+
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        function mergeOptions(obj1, obj2) {
+            var obj3 = {};
+            for (var key in obj1) {
+                obj3[key] = obj1[key];
+            }
+            for (var key in obj2) {
+                obj3[key] = obj2[key];
+            }
+            return obj3;
+        }
+
+        var foo = function (options) {
+            alert(options.width);
+            this.sel = {
+                divId: '',
+                width: '',
+                height: '',
+                callback: null
+            };
+            this.options = mergeOptions(this.sel, options);
+            this.init();
+        };
+
+        foo.prototype.init = function () {
+            var _this = this;
+            var b = document.getElementById(this.options.divId);
+            b.style.width = this.options.width + "px";
+            b.style.height = this.options.height + "px";
+            b.style.background = this.options.color;
+            _this.callback(this.options.callback);
+
+        };
+
+        foo.prototype.callback = function (callback) {
+            if (callback != null) {
+                callback();
+            }
+        };
+
+        var foc = new foo({
+            divId: 'box',
+            width: 250,
+            height: 250,
+            color: "#f80",
+            callback: function () {
+                var b = document.getElementById("box");
+                console.log(b.style.width);
+            }
+        })
+    }
+</script>
+
+</html>
