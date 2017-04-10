@@ -23,7 +23,8 @@ system.mac = p.indexOf("Mac") == 0;
 system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 if (system.win || system.mac || system.xll) {
     //电脑访问
-    console.log(system.win || system.mac || system.xll);
+    //console.log(system.win || system.mac || system.xll);
+    console.log(1213);
 } else {
     //手机访问
     function reurl() {
