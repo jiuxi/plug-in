@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>6.计算工作日</title>
+</head>
+<body>
+
+</body>
+<script>
+function getWeekday(first, last){
+//计算工作日方法：遍历这两个日期区间的每一个日期，获取他的getDay()
+
+//分别获取first和last的毫秒数(时间戳)
+first = first.getTime();
+last = last.getTime();
+
+var count = 0;
+while(first <= last){
+//first在遍历过程中，就是两个日期区间中的每一个日期
+//console.log(first);
+//将first转换成日期对象
+var d = new Date(first);
+console.log(d);
+if(d.getDay() >= 1 && d.getDay() <= 5){
+count++;
+}
+
+first += 24*3600*1000;
+}
+return count;
+}
+
+//定义两个日期
+var d1 = new Date(2016, 10, 1);
+var d2 = new Date(2016, 11, 1);
+//调用函数，传入这两个日期，得到工作日的天数
+var r = getWeekday(d1, d2);
+document.write("从2016-11-01至2016-12-01之间共有"+r+"个工作日");
+</script>
+</html>
