@@ -1,6 +1,4 @@
-# 常用方法整理
-
-## 移动端页面自适应
+> 移动端页面自适应
 
 ``` js
 // 页面自适应
@@ -27,7 +25,7 @@
 }(750, 750);
 ```
 
-## 计算工作日
+> 计算工作日
 
 ``` html
 <!DOCTYPE html>
@@ -75,7 +73,8 @@
 
 </html>
 ```
-## 数组常用方法
+
+> 数组常用方法
 
 ``` js
 // 数组去重
@@ -121,7 +120,7 @@ function getArr(a, b) {
 };
 ```
 
-## 移动端判断滑动方向
+> 移动端判断滑动方向
 
 ``` html
 <!DOCTYPE html>
@@ -210,14 +209,14 @@ function getArr(a, b) {
 
 </html>
 ```
-## 获取当前日期前后某一天
+> 获取当前日期前后某一天
 
 ``` js
 function get(Count) {
     var dd = new Date();
-    dd.setDate(dd.getDate() + Count); //��ȡX��������
+    dd.setDate(dd.getDate() + Count); 
     var y = dd.getFullYear();
-    var m = dd.getMonth() + 1; //��ȡ��ǰ�·ݵ�����
+    var m = dd.getMonth() + 1;
     var d = dd.getDate();
     return y + "-" + m + "-" + d;
 }
