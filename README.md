@@ -221,3 +221,31 @@ function get(Count) {
     return y + "-" + m + "-" + d;
 }
 ```
+> 获取所有id合集
+
+```
+function propEq(prop, value) {
+  return (obj) => {
+     return obj && obj[prop] === value;
+  };
+}
+
+function prop(key) {
+  return (obj) => {
+    return obj && obj[key];
+  };
+}
+
+const data = [{id: 1}, {id: 2}, {id: 3}, {id: 4}];
+
+// 我想得到id = 2的数据
+data.find(propEq('id', 2));
+// find太危险?
+data.filter(propEq('id', 2))[0];
+
+// 我想要所有的id集合
+data.map(prop('id'));
+// 我想要所有的name
+data.map(prop('name'));
+
+```
